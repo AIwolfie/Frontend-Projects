@@ -56,12 +56,18 @@ Welcome to my collection of frontend projects! This repository contains a series
 - **Focus:** API integration (Fetch/Async-Await), state management (Loading/Error/Empty), and random selection.
 - **Goal:** Build an intermediate-level app to discover trending repositories via asynchronous request handling.
 
+### 11. [Instagram Story Clone](./Instagram-Story-Clone/)
+- **Tech:** HTML5, CSS3, Vanilla JavaScript, **Local Storage API**
+- **Focus:** 24hr expiration logic, Base64 image storage, fullscreen modal UI, and progress timers.
+- **Goal:** Build a complex, client-side social feature with persistent data and interactive viewing.
+
 ---
 
 ## 🛠 Features Across Projects
 - ✅ **Mobile-First Design:** All layouts are responsive and tested for mobile devices.
 - ✅ **Accessibility:** Strong emphasis on semantic tags and ARIA support.
 - ✅ **Clean Code:** Well-commented, organized, and scalable structures.
+- ✅ **Advanced Logic:** Demonstrates complex timers, localStorage persistence, and API integration.
 - ✅ **No Frameworks:** Most projects use Vanilla JS to ensure a deep understanding of core web APIs.
 
 ---
@@ -72,7 +78,7 @@ Welcome to my collection of frontend projects! This repository contains a series
 Simply navigate to the project folder and open `index.html` in any modern web browser.
 
 ### For JavaScript Projects:
-1. Navigate to the project folder (e.g., `Tabs`, `Cookie Consent`, or `GitHub Random Repository`).
+1. Navigate to the project folder (e.g., `Tabs`, `Cookie Consent`, `GitHub Random Repository`, or `Instagram-Story-Clone`).
 2. Open `index.html` in your browser.
 
 ### For the Age Calculator (npm required):
