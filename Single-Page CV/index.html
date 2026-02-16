@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 
+        Project: Single-Page Semantic HTML CV
+        Goal: Demonstrate proper use of semantic HTML and SEO fundamentals
+        Note: No CSS or JavaScript is used in this project.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe | Frontend Developer CV</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional CV of John Doe, a Junior Frontend Developer specializing in Semantic HTML, CSS, and JavaScript.">
+    <meta name="keywords" content="Frontend Developer, CV, Resume, HTML, Semantic HTML, SEO, Accessibility">
+    <meta name="author" content="John Doe">
+
+    <!-- Open Graph (OG) Tags for Social Media Sharing -->
+    <meta property="og:title" content="John Doe | Frontend Developer CV">
+    <meta property="og:description" content="A clean, structured, and semantic CV demonstrating web development skills and experience.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://johndoe-portfolio.example.com">
+    <meta property="og:image" content="https://johndoe-portfolio.example.com/assets/og-image.jpg">
+
+    <!-- Favicon Link -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/000000/resume.png">
+</head>
+<body>
+
+    <!-- Main Header Section -->
+    <header>
+        <h1>John Doe</h1>
+        <p><strong>Junior Frontend Developer</strong></p>
+
+        <!-- Navigation for page sections -->
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </nav>
+
+        <hr>
+
+        <!-- Contact Information Section -->
+        <address id="contact">
+            <h3>Contact Details</h3>
+            <p>
+                Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a><br>
+                Phone: <a href="tel:+1234567890">+1 (234) 567-890</a><br>
+                LinkedIn: <a href="https://linkedin.com/in/johndoe" target="_blank" rel="noopener">linkedin.com/in/johndoe</a><br>
+                GitHub: <a href="https://github.com/johndoe" target="_blank" rel="noopener">github.com/johndoe</a>
+            </p>
+        </address>
+    </header>
+
+    <hr>
+
+    <main>
+        <!-- Professional Summary -->
+        <section id="summary">
+            <h2>Professional Summary</h2>
+            <p>
+                Passionate and detail-oriented Junior Frontend Developer with a strong foundation in semantic HTML and modern web standards. 
+                Dedicated to building accessible and SEO-friendly web applications. Eager to contribute to a collaborative team and 
+                continuously learn new technologies to deliver high-quality user experiences.
+            </p>
+        </section>
+
+        <!-- Technical Skills -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <p>Key areas of expertise:</p>
+            <ul>
+                <li><strong>Markup:</strong> Semantic HTML5, ARIA Roles</li>
+                <li><strong>Styling:</strong> CSS3, Flexbox, CSS Grid</li>
+                <li><strong>Javascripting:</strong> ES6+, DOM Manipulation</li>
+                <li><strong>Tools:</strong> Git, GitHub, VS Code</li>
+                <li><strong>Methodologies:</strong> Mobile-First Design, SEO Fundamentals</li>
+            </ul>
+        </section>
+
+        <!-- Education History -->
+        <section id="education">
+            <h2>Education</h2>
+            
+            <article>
+                <h3>Bachelor of Science in Computer Science</h3>
+                <p><em>State University of Technology</em></p>
+                <p>
+                    <strong>Duration:</strong> 
+                    <time datetime="2020-09">September 2020</time> &ndash; <time datetime="2024-06">June 2024</time>
+                </p>
+                <p>
+                    Graduated with Honors. Focused on core software engineering principles, algorithms, and web technologies. 
+                    Completed a senior capstone project on web accessibility.
+                </p>
+            </article>
+        </section>
+
+        <!-- Career History -->
+        <section id="experience">
+            <h2>Career History</h2>
+
+            <!-- Job #1 -->
+            <article>
+                <h3>Web Development Intern</h3>
+                <p><em>Creative Digital Agency</em></p>
+                <p>
+                    <strong>Duration:</strong> 
+                    <time datetime="2024-01">January 2024</time> &ndash; <time datetime="2024-04">April 2024</time>
+                </p>
+                <ul>
+                    <li>Participated in the development of 5+ client websites using semantic HTML.</li>
+                    <li>Improved website accessibility scores by an average of 30% through proper use of ARIA and semantic tags.</li>
+                    <li>Collaborated with the design team to ensure pixel-perfect implementation of UI/UX designs.</li>
+                    <li>Utilized Git for version control and successfully managed 40+ pull requests.</li>
+                </ul>
+            </article>
+
+            <!-- Job #2 -->
+            <article>
+                <h3>Freelance Web Designer</h3>
+                <p><em>Independent Contractor</em></p>
+                <p>
+                    <strong>Duration:</strong> 
+                    <time datetime="2023-06">June 2023</time> &ndash; <time datetime="2023-12">December 2023</time>
+                </p>
+                <ul>
+                    <li>Designed and developed responsive landing pages for local small businesses.</li>
+                    <li>Conducted SEO audits and implemented metadata optimizations to increase organic traffic.</li>
+                    <li>Managed client expectations and delivered projects consistently on schedule.</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Portfolio Projects -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+
+            <article>
+                <h3>Semantic Portfolio Page</h3>
+                <p>
+                    A fully accessible personal portfolio built strictly with HTML to demonstrate the power of 
+                    proper document structure and SEO best practices.
+                </p>
+                <p><strong>Technologies used:</strong> Semantic HTML5, SEO Audit Tools</p>
+            </article>
+
+            <article>
+                <h3>Local Bakery Website</h3>
+                <p>
+                    A complete website redesign for a local bakery, focusing on mobile responsiveness and 
+                    clear information hierarchy.
+                </p>
+                <p><strong>Technologies used:</strong> HTML5, CSS3 Mockups, Google Maps Integration</p>
+            </article>
+        </section>
+    </main>
+
+    <hr>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2026 John Doe. All rights reserved.</p>
+        <p>
+            <em>This CV was built using 100% Semantic HTML for educational purposes.</em><br>
+            Last updated: <time datetime="2026-02-16">February 16, 2026</time>
+        </p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+/* 
+    Project: Simple Tabs Component
+    Focus: DOM manipulation, Accessibility, and Modern UI.
+    Strategy: Underline-style indicators, smooth transitions, and ARIA support.
+*/
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary: #6366f1;
+    /* Indigo 500 */
+    --text-main: #1f2937;
+    /* Gray 800 */
+    --text-muted: #6b7280;
+    /* Gray 500 */
+    --bg-body: #f3f4f6;
+    --bg-card: #ffffff;
+    --border: #e5e7eb;
+
+    --radius: 0.75rem;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+/* --- Tabs Component Container --- */
+.tabs-container {
+    background: var(--bg-card);
+    width: 100%;
+    max-width: 600px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.tabs-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.tabs-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Tab List (Navigation) --- */
+.tab-list {
+    display: flex;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 2rem;
+    gap: 1rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* Hide scrollbar for clean look */
+}
+
+.tab-list::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 0.75rem 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.tab-btn:hover {
+    color: var(--primary);
+}
+
+/* Active State indicator */
+.tab-btn[aria-selected="true"] {
+    color: var(--primary);
+}
+
+.tab-btn[aria-selected="true"]::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    /* Align with tab-list border */
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 3px 3px 0 0;
+}
+
+/* Focus States */
+.tab-btn:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* --- Tab Panels (Content) --- */
+.tab-panel {
+    animation: fadeIn 0.4s ease;
+}
+
+/* Using [hidden] to hide non-active panels */
+.tab-panel[hidden] {
+    display: none;
+}
+
+.panel-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.panel-text {
+    color: var(--text-muted);
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 480px) {
+    .tabs-container {
+        padding: 1.5rem;
+    }
+
+    .tab-list {
+        gap: 0.5rem;
+    }
+
+    .tab-btn {
+        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator | Luxon & Flatpickr</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Calculate your exact age in years, months, and days using modern web technologies. Simple, accurate, and accessible.">
+    <meta name="author" content="Frontend Dev">
+</head>
+
+<body>
+
+    <main class="app-container">
+        <!-- Calculator Card -->
+        <section class="calculator-card">
+            <header class="card-header">
+                <h1>Age Calculator</h1>
+                <p>Select your birthdate to calculate your exact age.</p>
+            </header>
+
+            <form id="age-form" class="calculator-form" novalidate>
+                <!-- Input Group -->
+                <div class="input-group">
+                    <label for="birthdate">Date of Birth</label>
+                    <input type="text" id="birthdate" name="birthdate" placeholder="Select Date" required
+                        aria-required="true">
+                    <!-- Error Message Area -->
+                    <span id="error-message" class="error-text" aria-live="polite"></span>
+                </div>
+
+                <button type="submit" class="submit-btn">Calculate Age</button>
+            </form>
+
+            <!-- Result Section -->
+            <section id="result-area" class="result-area" hidden>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <span id="years" class="result-number">--</span>
+                        <span class="result-label">Years</span>
+                    </div>
+                    <div class="result-item">
+                        <span id="months" class="result-number">--</span>
+                        <span class="result-label">Months</span>
+                    </div>
+                    <div class="result-item">
+                        <span id="days" class="result-number">--</span>
+                        <span class="result-label">Days</span>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- App Logic -->
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

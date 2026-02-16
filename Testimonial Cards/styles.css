@@ -1,0 +1,200 @@
+/* 
+    Project: Responsive Testimonial Cards
+    Technique: CSS Grid and Flexbox for modern, responsive card-based layouts.
+    Approach: Mobile-first design with a focus on visual hierarchy and typography.
+*/
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap');
+
+:root {
+    /* Color Palette */
+    --primary: #6366f1;
+    /* Indigo 500 */
+    --primary-dim: #818cf8;
+    --text-dark: #0f172a;
+    /* Slate 900 */
+    --text-muted: #64748b;
+    /* Slate 500 */
+    --bg-body: #f8fafc;
+    --bg-card: #ffffff;
+    --border: #e2e8f0;
+
+    /* Tokens */
+    --radius: 1.25rem;
+    --shadow-soft: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* --- Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 4rem 1rem;
+}
+
+h1 {
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--primary), #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+}
+
+/* --- Layout Grid --- */
+.testimonials-grid {
+    display: grid;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Responsive auto-fit grid */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* --- Card Base Styling --- */
+.testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-dim);
+}
+
+/* Icon Polish */
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 5rem;
+    font-family: serif;
+    color: var(--primary);
+    opacity: 0.1;
+    line-height: 1;
+}
+
+/* --- Components --- */
+
+/* Quote Text */
+.testimonial-quote {
+    font-style: italic;
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Figure/User Area */
+.testimonial-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+}
+
+.user-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-dim);
+    padding: 2px;
+}
+
+.user-info h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.user-info p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* --- Style Variations --- */
+
+/* Highlighted/Dark Card */
+.card-accent {
+    background: linear-gradient(135deg, var(--primary), #4338ca);
+    color: #ffffff;
+    border: none;
+}
+
+.card-accent .testimonial-quote {
+    color: #e2e8f0;
+}
+
+.card-accent .user-info h3 {
+    color: #ffffff;
+}
+
+.card-accent .user-info p {
+    color: #cbd5e1;
+}
+
+.card-accent .user-avatar {
+    border-color: #ffffff44;
+}
+
+.card-accent::before {
+    color: #ffffff;
+}
+
+/* Center-Aligned Card */
+.card-centered {
+    text-align: center;
+}
+
+.card-centered .testimonial-user {
+    flex-direction: column;
+    border-top: none;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 640px) {
+    body {
+        padding: 2rem 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+}

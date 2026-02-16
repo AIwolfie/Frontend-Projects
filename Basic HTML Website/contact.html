@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Basic Multi-Page HTML Website</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Get in touch with me! This page features a semantic contact form for inquiries and feedback.">
+    <meta name="keywords" content="Contact, Feedback, Form, Support, Inquiry">
+    <meta name="author" content="John Doe">
+</head>
+
+<body>
+
+    <!-- Main Header -->
+    <header>
+        <h1>My Personal Website</h1>
+        <!-- Global Navigation -->
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <section id="contact-form">
+            <h2>Contact Me</h2>
+            <p>If you have any questions or just want to say hello, please fill out the form below!</p>
+
+            <!-- Semantic Contact Form -->
+            <form action="#" method="POST">
+                <div>
+                    <label for="name">Full Name:</label><br>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <br>
+                <div>
+                    <label for="email">Email Address:</label><br>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                </div>
+                <br>
+                <div>
+                    <label for="message">Your Message:</label><br>
+                    <textarea id="message" name="message" rows="5" cols="40" placeholder="Type your message here..."
+                        required></textarea>
+                </div>
+                <br>
+                <div>
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Optional Sidebar/Aside for Contact Context -->
+        <aside>
+            <h3>Other Ways to Connect</h3>
+            <p>You can also find me on:</p>
+            <ul>
+                <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Basic Multi-Page HTML Website. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

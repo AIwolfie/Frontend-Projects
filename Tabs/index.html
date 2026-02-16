@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Tabs Component | Vanilla JavaScript</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="A simple, accessible tabs component built with vanilla JavaScript. Demonstrates DOM manipulation and event handling.">
+    <meta name="author" content="Frontend Dev">
+
+    <!-- Design System Link -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <section class="tabs-container">
+        <header class="tabs-header">
+            <h1>Quick Explore</h1>
+            <p>Select a tab to learn more about our services.</p>
+        </header>
+
+        <!-- Tab Navigation (role="tablist") -->
+        <div class="tab-list" role="tablist" aria-label="Feature Tabs">
+            <button class="tab-btn" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1"
+                data-target="panel-1" tabindex="0">
+                Overview
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2"
+                data-target="panel-2" tabindex="-1">
+                Features
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3"
+                data-target="panel-3" tabindex="-1">
+                Analytics
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-4" id="tab-4"
+                data-target="panel-4" tabindex="-1">
+                Support
+            </button>
+        </div>
+
+        <!-- Tab Content Panels (role="tabpanel") -->
+        <div class="tab-panels">
+
+            <!-- Panel 1 -->
+            <div class="tab-panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
+                <h2 class="panel-title">System Overview</h2>
+                <p class="panel-text">
+                    Welcome to the central dashboard. Our system provides a unified view of all your integrated
+                    services.
+                    Monitor performance, manage user access, and configure global settings from a single intuitive
+                    interface.
+                </p>
+            </div>
+
+            <!-- Panel 2 -->
+            <div class="tab-panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" tabindex="0" hidden>
+                <h2 class="panel-title">Core Features</h2>
+                <p class="panel-text">
+                    Explore high-speed data processing, automated workflow management, and intelligent threat detection.
+                    Our feature set is designed to scale with your business needs, ensuring you stay ahead of the curve.
+                </p>
+            </div>
+
+            <!-- Panel 3 -->
+            <div class="tab-panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" tabindex="0" hidden>
+                <h2 class="panel-title">Real-time Analytics</h2>
+                <p class="panel-text">
+                    Gain deep insights into your operations with our robust analytics engine. Track metrics in
+                    real-time,
+                    generate custom reports, and identify trends before they impact your bottom line.
+                </p>
+            </div>
+
+            <!-- Panel 4 -->
+            <div class="tab-panel" id="panel-4" role="tabpanel" aria-labelledby="tab-4" tabindex="0" hidden>
+                <h2 class="panel-title">24/7 Support</h2>
+                <p class="panel-text">
+                    Our dedicated support team is available around the clock to assist you. Whether you need technical
+                    troubleshooting or implementation guidance, we are here to help you succeed.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Vanilla JS Link -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

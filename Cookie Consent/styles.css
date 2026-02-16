@@ -1,0 +1,173 @@
+/* 
+    Project: Cookie Consent Banner
+    Focus: DOM manipulation, Persistence (localStorage), and Accessible UI.
+    Strategy: Fixed bottom positioning, high contrast, and smooth transitions.
+*/
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    /* Color Palette */
+    --bg-banner: #1f2937;
+    /* Dark Gray 800 */
+    --text-banner: #ffffff;
+    --primary: #3b82f6;
+    /* Blue 500 */
+    --primary-hover: #2563eb;
+    --decline-bg: #4b5563;
+    /* Gray 600 */
+    --decline-hover: #374151;
+
+    /* Global Tokens */
+    --radius: 0.75rem;
+    --shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition: all 0.3s ease;
+}
+
+/* --- Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: #f3f4f6;
+    color: #111827;
+    padding-bottom: 150px;
+    /* Space for the banner */
+}
+
+/* Sample Page Content */
+.page-container {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #4b5563;
+}
+
+/* --- Cookie Banner --- */
+.cookie-banner {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    background-color: var(--bg-banner);
+    color: var(--text-banner);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    z-index: 9999;
+
+    /* Layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    /* Animation state */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Hidden State (controlled by JS) */
+.cookie-banner.hidden {
+    transform: translateY(120%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cookie-content {
+    flex: 1;
+}
+
+.cookie-content h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.cookie-content p {
+    font-size: 0.875rem;
+    color: #d1d5db;
+    margin-bottom: 0;
+}
+
+/* Buttons */
+.cookie-actions {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.btn {
+    border: none;
+    padding: 0.625rem 1.25rem;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-accept {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-accept:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-decline {
+    background-color: var(--decline-bg);
+    color: white;
+}
+
+.btn-decline:hover {
+    background-color: var(--decline-hover);
+}
+
+/* Focus States for Accessibility */
+.btn:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .cookie-banner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        padding: 1.25rem;
+        text-align: center;
+    }
+
+    .cookie-actions {
+        justify-content: center;
+    }
+
+    .btn {
+        flex: 1;
+    }
+}
