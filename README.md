@@ -51,6 +51,11 @@ Welcome to my collection of frontend projects! This repository contains a series
 - **Focus:** npm package integration, complex date math, and third-party library initialization.
 - **Goal:** Build a professional tool that calculates exact age (Years, Months, Days) using external logic and custom pickers.
 
+### 10. [GitHub Random Repository Finder](./GitHub%20Random%20Repository/)
+- **Tech:** HTML5, CSS3, Vanilla JavaScript, **GitHub API**
+- **Focus:** API integration (Fetch/Async-Await), state management (Loading/Error/Empty), and random selection.
+- **Goal:** Build an intermediate-level app to discover trending repositories via asynchronous request handling.
+
 ---
 
 ## 🛠 Features Across Projects
@@ -67,7 +72,7 @@ Welcome to my collection of frontend projects! This repository contains a series
 Simply navigate to the project folder and open `index.html` in any modern web browser.
 
 ### For JavaScript Projects:
-1. Navigate to the project folder (e.g., `Tabs` or `Cookie Consent`).
+1. Navigate to the project folder (e.g., `Tabs`, `Cookie Consent`, or `GitHub Random Repository`).
 2. Open `index.html` in your browser.
 
 ### For the Age Calculator (npm required):

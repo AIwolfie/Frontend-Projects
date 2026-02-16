@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Random Repository Finder</title>
+    <meta name="description"
+        content="Find a random trending GitHub repository based on your favorite programming language.">
+    <meta name="author" content="Frontend Dev">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="container">
+        <header class="hero">
+            <h1>GitHub Random Repo Finder</h1>
+            <p>Discover interesting projects to contribute to or learn from.</p>
+        </header>
+
+        <!-- Search Controls -->
+        <section class="search-section">
+            <div class="search-controls">
+                <label for="language-select">Select Language:</label>
+                <div class="select-wrapper">
+                    <select id="language-select">
+                        <option value="">Any Language</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="typescript">TypeScript</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="c++">C++</option>
+                        <option value="go">Go</option>
+                        <option value="rust">Rust</option>
+                        <option value="php">PHP</option>
+                        <option value="ruby">Ruby</option>
+                        <option value="swift">Swift</option>
+                    </select>
+                </div>
+                <button id="fetch-btn" class="primary-btn">Find Random Repo</button>
+            </div>
+        </section>
+
+        <!-- Result Display Component -->
+        <section id="result-container" class="result-container">
+            <!-- Initial State -->
+            <div id="state-initial" class="state-ui">
+                <div class="icon">🚀</div>
+                <h2>Ready to explore?</h2>
+                <p>Pick a language and hit the button to find your next favorite repo!</p>
+            </div>
+
+            <!-- Loading State -->
+            <div id="state-loading" class="state-ui" hidden>
+                <div class="spinner"></div>
+                <p>Diving into GitHub's treasure chest...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="state-error" class="state-ui" hidden>
+                <div class="icon">⚠️</div>
+                <h2 id="error-title">Oops! Something went wrong</h2>
+                <p id="error-desc" role="alert">We couldn't reach GitHub right now. Please try again later.</p>
+                <button class="retry-btn">Try Again</button>
+            </div>
+
+            <!-- Empty State -->
+            <div id="state-empty" class="state-ui" hidden>
+                <div class="icon">🌵</div>
+                <h2>No Repos Found</h2>
+                <p>Looks like there are no trending repos for this language at the moment.</p>
+            </div>
+
+            <!-- Success State (Repository Card) -->
+            <article id="repo-card" class="repo-card" hidden>
+                <div class="card-header">
+                    <div class="owner-info">
+                        <img id="owner-avatar" src="" alt="" class="avatar">
+                        <span id="owner-name" class="username"></span>
+                    </div>
+                    <a id="repo-link" href="#" target="_blank" rel="noopener">
+                        <h2 id="repo-name">Repository Name</h2>
+                    </a>
+                </div>
+
+                <p id="repo-desc" class="repo-description">Loading description...</p>
+
+                <div class="repo-stats">
+                    <div class="stat-item" title="Stars">
+                        <span class="stat-icon">⭐</span>
+                        <span id="stat-stars">0</span>
+                    </div>
+                    <div class="stat-item" title="Forks">
+                        <span class="stat-icon">🍴</span>
+                        <span id="stat-forks">0</span>
+                    </div>
+                    <div class="stat-item" title="Open Issues">
+                        <span class="stat-icon">🐞</span>
+                        <span id="stat-issues">0</span>
+                    </div>
+                    <div class="stat-item" id="repo-lang-tag">
+                        <span id="stat-lang">Python</span>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button id="refresh-btn" class="secondary-btn">Show Another Repo 🔄</button>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>Built with Vanilla JavaScript & GitHub Search API</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
